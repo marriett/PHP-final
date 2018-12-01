@@ -37,6 +37,7 @@ $con = $conexao->query($consulta);
             
             <h2 style=margin-top:auto;>Alterar Item:</h2></br>
             <form action=# method=POST id=item>
+		<!--
                 <label>Escolha categoria do item:</label>
                 <select class=form-control>
                     <option value=livro>Livro</option>                    
@@ -47,6 +48,7 @@ $con = $conexao->query($consulta);
                     <option value=hq>HQ</option>
                 </select>
                 <br>
+		-->
 
             </form>
             <br>
