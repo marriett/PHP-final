@@ -1,0 +1,88 @@
+.jumbotron{
+        background: none;
+        font-size: 60px;
+      }
+      
+      .jumbotron .titulo {
+        font-size: 50px;
+      }
+      
+      .jumbotron .paragrafo {
+        font-size: 20px;
+      }
+
+      .container .subtitulo {
+        margin-left: 40px;
+      }
+
+      .container ul {
+        list-style-type:none;
+        font-size: 20px;
+    }
+
+    .container ul li {
+        padding-bottom: 15px;
+        
+    }
+
+    .container ul li a {
+        color:olive;
+    }
+
+    body {
+      background: url(https://source.unsplash.com/V_zNGJKVIgo);
+      background-repeat: no-repeat; 
+      background-size: cover;
+    }
+
+    .margem {
+      margin-top: 05%;
+    }
+
+    .form-group{
+      align-content: right;
+    }
+
+
+    h2 {
+      margin-top:auto;
+    }
+
+    div.scroll {
+      height: auto;
+      max-height: 300px;
+      width: 100%;
+      overflow: auto;
+      border: 1px solid #ffffff;
+      padding: 8px;
+      background-color: #ffffff;
+    }
+
+    table{
+      border: none;
+      width: 100%;
+    }
+    tbody{
+      width: 100%;
+      height: auto;
+    }
+
+    th{
+      width: 33%;
+      padding: 3px;
+      border: none;
+    }
+
+    td{
+      width: 33%;
+      padding: 3px;
+      border: none;
+    }
+
+    .esconder {
+      visibility: hidden;
+      width: 0px;
+      height: 0px;
+      margin: 0px;
+      padding: 0px;
+    }
