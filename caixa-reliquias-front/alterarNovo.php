@@ -1,9 +1,10 @@
 <?php
-
+session_start();
 include_once("conexao.php");
 include_once("logout.php");
-
-$consulta = "SELECT * FROM item";
+$item = $_POST['categoria'];
+$id = $_SESSION['idUser'];
+$consulta = "SELECT * FROM item WHERE categoria = '$item' AND idUsuario = '$id'";
 $con = $conexao->query($consulta);
 
 ?>
@@ -36,10 +37,11 @@ $con = $conexao->query($consulta);
 
             
             <h2 style=margin-top:auto;>Alterar Item:</h2></br>
-            <form action=# method=POST id=item>
-		<!--
+            <form action=alterarNovo.php method=POST id=item>
+		
                 <label>Escolha categoria do item:</label>
-                <select class=form-control>
+                <select class=form-control name='categoria'>
+                    <option value="" disabled selected>Escolha categoria</option>
                     <option value=livro>Livro</option>                    
                     <option value=cd>CD</option>
                     <option value=dvd>DVD</option>
@@ -48,8 +50,8 @@ $con = $conexao->query($consulta);
                     <option value=hq>HQ</option>
                 </select>
                 <br>
-		-->
-
+		
+                <input class="form-control" type="submit" name="listar" value="Listar" required>
             </form>
             <br>
 
@@ -61,6 +63,7 @@ $con = $conexao->query($consulta);
 								<tr>
 									<th class="esconder">Id</th>
 									<th>nome item</th>
+                                    <th>descrição</th>
 									<th>categoria</th>
 									<th>alterar</th>
 								</tr>
@@ -70,6 +73,7 @@ $con = $conexao->query($consulta);
 								<tr>
 									<td class="esconder"><?php echo $dado["idItem"];?></td>
 									<td><?php echo $dado["nomeItem"];?></td>
+                                    <td><?php echo $dado["descricao"];?></td>
 									<td><?php echo $dado["categoria"];?></td>
 									<td><a href="alterarBanco.php?id=<?php echo $dado["idItem"]?>">Alterar</a></td>				
 								</tr>
