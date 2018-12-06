@@ -1,9 +1,10 @@
 <?php
-
+session_start();
 include_once("conexao.php");
 include_once("logout.php");
 $item = $_POST['categoria'];
-$consulta = "SELECT * FROM item WHERE categoria = '$item'";
+$id = $_SESSION['idUser'];
+$consulta = "SELECT * FROM item WHERE categoria = '$item' AND idUsuario = '$id'";
 $con = $conexao->query($consulta);
 
 ?>
@@ -40,6 +41,7 @@ $con = $conexao->query($consulta);
             <form action="items.php" method="POST" id="item">
                 <label>Categoria:</label>
                 <select class=form-control name="categoria">
+                    <option value="" disabled selected>Escolha categoria</option>
                     <option value=livro>Livro</option>                    
                     <option value=cd>CD</option>
                     <option value=dvd>DVD</option>
@@ -61,7 +63,7 @@ $con = $conexao->query($consulta);
 								<th class="esconder">Id</th>
 								<th>nome item</th>
 								<th>descrição</th>
-								<th>categoria</th>
+								<th>estado</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -70,7 +72,7 @@ $con = $conexao->query($consulta);
 								<td class="esconder"><?php echo $dado["idItem"];?></td>
 								<td><?php echo $dado["nomeItem"];?></td>
 								<td><?php echo $dado["descricao"];?></td>
-								<td><?php echo $dado["categoria"];?></td>
+								<td><?php echo $dado["estado"];?></td>
 							</tr>
 							<?php } mysqli_close($conexao); ?>
 						</tbody>
