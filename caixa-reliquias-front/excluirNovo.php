@@ -36,8 +36,9 @@ $con = $conexao->query($consulta);
 
 	            
 	            <h2 style=margin-top:auto;>Excluir Item:</h2></br>
-	            <form action=# method=POST id=item>
-	                <label>Escolha categoria do item:</label>
+	            <!--
+			<form action=# method=POST id=item>
+			<label>Escolha categoria do item:</label>
 	                <select class=form-control>
 	                    <option value=livro>Livro</option>                    
 	                    <option value=cd>CD</option>
@@ -51,7 +52,7 @@ $con = $conexao->query($consulta);
 	                <input class="form-control" type="submit" name="listar" value="Listar" required>
 	            </form>
 	            <br>
-
+		    -->
 	            <div class="scroll">
 	            	<center>
 						<form method="POST" id="item">
